@@ -1,0 +1,6 @@
+name: Task Control
+description: 'Manages tasks and helps to understand the subtleties of the DB API and Form API'
+type: module
+core: 8.x
+version: 1.0
+package: Custom

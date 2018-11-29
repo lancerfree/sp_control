@@ -1,0 +1,7 @@
+sp_control.common_tasks_router:
+  path: 'sp_control/tabs/{route_param}'
+  defaults:
+    _controller: '\Drupal\sp_control\Controller\DefaultController::getOperationTab'
+    route_param: 'default'
+  requirements:
+    _access: 'TRUE'

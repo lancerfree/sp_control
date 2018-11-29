@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements preprocess().
+ *
+ * Adds classes to the body tags
+ */
+function sp_control_preprocess_html(&$variables) {
+  if (!empty($GLOBALS['SP_CONTROL_BODY_CLASSES'])) {
+    $variables['attributes']['class'] = @array_merge((array) $variables['attributes']['class'], $GLOBALS['SP_CONTROL_BODY_CLASSES']);
+  }
+}

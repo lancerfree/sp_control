@@ -1,0 +1,35 @@
+.manage-tasks-form-wrapper {
+    border-radius: 10px;
+    border: 1px solid #3b3b3b;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.manage-tasks-form-wrapper .add_task_id {
+    color: green;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.manage-tasks-form-wrapper label[for^=edit-task-id-visible] {
+    display: none;
+}
+
+.manage-tasks-form-wrapper .form-type-select {
+    display: inline-block;
+    width: 40%;
+    margin: 5px 0;
+}
+
+.manage-tasks-form-wrapper select {
+    width: 80%;
+}
+
+.action-edit-task .manage-tasks-form-wrapper .add_task_id {
+    color: orange;
+}
+
+#sp_control_tasks_wrapper .description,
+#sp_control_tasks_wrapper label {
+    font-size: 20px;
+}

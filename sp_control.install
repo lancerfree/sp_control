@@ -1,0 +1,148 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ */
+function sp_control_schema() {
+  $schema['sp_control_tasks'] = [
+    'description' => 'Stores task which need to do or already done.',
+    'fields' => [
+      'task_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique task ID.',
+      ],
+      'description' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Task description',
+      ],
+      'creator' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'dsescription' => "User who creates task {sp_control_users}.user_id",
+      ],
+      'implementer' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Creator user's {sp_control_users}.user_id",
+      ],
+      'priority' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Priority of the task.',
+      ],
+      'status' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Status of the task.',
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Task creation time.',
+      ],
+      'updated' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Task time update.',
+      ],
+    ],
+    'primary key' => ['task_id'],
+    'indexes' => [
+      'description' => ['description'],
+      'creator' => ['creator'],
+      'implementer' => ['implementer'],
+      'priority' => ['priority'],
+      'status' => ['status'],
+      'created' => ['created'],
+      'updated' => ['updated'],
+    ],
+  ];
+
+  $schema['sp_control_users'] = [
+    'description' => 'Stores users data who creates or implements task.',
+    'fields' => [
+      'user_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique user ID.',
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'User\'s name',
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'User creation time.',
+      ],
+      'updated' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'User time update.',
+      ],
+    ],
+    'primary key' => ['user_id'],
+    'indexes' => [
+      'name' => ['name'],
+      'created' => ['created'],
+      'updated' => ['updated'],
+    ],
+  ];
+
+  $schema['sp_control_fetch_test'] = [
+    'description' => 'Store some data for test fetch key in the $connection query.',
+    'fields' => [
+      'str_data_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique str_data ID.',
+      ],
+      'str_data' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Some data for test',
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Data creation time.',
+      ],
+      'updated' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Data time update.',
+      ],
+    ],
+    'primary key' => ['str_data_id'],
+    'indexes' => [
+      'str_data' => ['str_data'],
+      'created' => ['created'],
+      'updated' => ['updated'],
+    ],
+  ];
+
+  return $schema;
+}

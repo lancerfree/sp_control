@@ -1,0 +1,6 @@
+sp_control.common_tasks_link:
+  title: 'Tasks & Users.'
+  description: 'Tasks & Users.'
+  route_name: sp_control.common_tasks_router
+  route_parameters:
+    route_param:  'manage-users'

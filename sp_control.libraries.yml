@@ -1,0 +1,45 @@
+main_drupal_api:
+  version: VERSION
+  header: true
+  drupalSettings:
+    jquery_to_header: true
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.ajax
+manage_users:
+  version: VERSION
+  header: true
+  js:
+    js/sp-control-manage-users.js: {}
+  css:
+    base:
+      css/sp-control-manage-users.css: {}
+  dependencies:
+    - sp_control/main_drupal_api
+    - sp_control/common
+manage_tasks:
+  version: VERSION
+  header: true
+  js:
+    js/sp-control-manage-tasks.js: {}
+  css:
+    base:
+      css/sp-control-manage-tasks.css: {}
+  dependencies:
+    - sp_control/main_drupal_api
+    - sp_control/common
+common:
+  version: VERSION
+  header: true
+  js:
+    js/sp-control.js: {}
+  css:
+    base:
+      css/sp-control.css: {}
+  dependencies:
+    - sp_control/main_drupal_api
+
+

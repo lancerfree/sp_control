@@ -1,0 +1,14 @@
+sp_control.manage_users_tab:
+  route_name: sp_control.common_tasks_router
+  base_route: sp_control.common_tasks_router
+  title: User management
+  weight: 10
+  route_parameters:
+    route_param:  'manage-users'
+sp_control.manage_tasks_tab:
+  route_name: sp_control.common_tasks_router
+  base_route: sp_control.common_tasks_router
+  title: Task management
+  weight: 20
+  route_parameters:
+    route_param:  'manage-tasks'

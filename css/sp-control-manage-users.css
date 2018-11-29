@@ -1,0 +1,27 @@
+.manage-users-form-wrapper {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #3b3b3b;
+    margin-bottom: 10px;
+}
+
+.manage-users-form-wrapper .user-id-visible {
+    font-size: 30px;
+    color: green;
+    font-weight: bold;
+}
+
+.form-item-user-id-visible span {
+    font-size: 30px;
+    color: green;
+    font-weight: bold;
+}
+
+.action-edit-user .form-item-user-id-visible span {
+    color: orange;
+}
+
+#manage-users-form-wrapper .description,
+#manage-users-form-wrapper label {
+    font-size: 20px;
+}

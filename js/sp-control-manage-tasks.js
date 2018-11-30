@@ -23,6 +23,24 @@
   };
 
   /**
+   * Extract data for action from string.
+   *
+   * @param {string} hashValue
+   *   Href link.
+   *
+   * @return {object}
+   */
+  var manageParseActionData = function (hashValue){
+    var wildStr = hashValue.trim();
+    var hashPos = wildStr.indexOf('#');
+    if(hashPos!==-1) {
+      wildStr = wildStr.substring(hashPos + 1)
+    }
+    var data = wildStr.split('-');
+    return {'type':data.shift(),'params':data}
+  };
+
+  /**
    * Clear form and prepared for a new task.
    */
   var setTaskNew = function () {

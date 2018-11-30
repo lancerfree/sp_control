@@ -383,7 +383,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: true
-          content: '<a href="#add" class="sp-control-users-action">{{ ''Add a new user''|t }}</a>'
+          content: '<a href="#add" class="sp-control-users-action">{{ ''Add new user''|t }}</a>'
           plugin_id: text_custom
       footer: {  }
       empty: {  }

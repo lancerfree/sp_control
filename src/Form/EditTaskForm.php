@@ -60,13 +60,13 @@ class EditTaskForm extends FormBase {
 
     $form['description'] = [
       '#type' => 'textarea',
-      '#title' => $this->t('Description'),
+      '#title' => $this->t('Task description'),
       '#description' => $this->t('Please enter description of task.'),
     ];
 
     $form['creator'] = [
       '#type' => 'select',
-      '#title' => $this->t('Creator of task'),
+      '#title' => $this->t('Task creator'),
       '#options' => $list_user,
       '#description' => $this->t('Please enter who create this task.'),
       #  '#default_value' =>
@@ -74,21 +74,21 @@ class EditTaskForm extends FormBase {
 
     $form['implementer'] = [
       '#type' => 'select',
-      '#title' => $this->t('Implementer of task'),
+      '#title' => $this->t('Task performer'),
       '#description' => $this->t('Please enter who will implement this task.'),
       '#options' => $list_user,
     ];
 
     $form['priority'] = [
       '#type' => 'select',
-      '#title' => $this->t('Priority of task'),
+      '#title' => $this->t('Task priority'),
       '#description' => $this->t('Please enter priority ot the task.'),
       '#options' => $list_priority,
     ];
 
     $form['status'] = [
       '#type' => 'select',
-      '#title' => $this->t('Status of task'),
+      '#title' => $this->t('Task status'),
       '#description' => $this->t('Please enter status ot the task.'),
       '#options' => $list_status,
     ];
